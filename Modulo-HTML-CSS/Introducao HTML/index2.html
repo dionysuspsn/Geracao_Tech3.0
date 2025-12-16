@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+<body>
+    <form action="" method="post">
+        <div>
+            <label for="nome">Nome</label>
+            <input type="text" id = "nome" name="nome" required>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        <div>
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha" placeholder="Exemplo: 12345" required>
+        </div>
+        <div>
+            <label for="checkbox">Checkbox</label>
+            <input type="checkbox" name="Checkbox" id="checkbox" required>
+        </div>
+        <div>
+            <label for="Data">Data de Nascimento</label>
+            <input type="date" name="Data" id="Data" required>
+        </div>
+        <p>Gênero:</p>
+        <div>
+            <select name="Genero" id="Genero">
+                <option value="1">Masculino</option>
+                <option value="2">Feminino</option>
+            </select>
+        <br>
+        <br>
+        </div>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
