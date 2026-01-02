@@ -1,0 +1,1 @@
+document.write("<h1>Primeiro Hello World com JS</h1>")

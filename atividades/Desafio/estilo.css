@@ -4,15 +4,21 @@
     margin : 0;
     padding: 0;
 }
-#cabecalho{
+#cabecalho {
     background-color: blueviolet;
     min-height: 500px;
+    
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
 }
-#titulo1{
+#titulo1 {
     background-color: rgba(71, 12, 78, 0.712);
     text-align: center;
     color: rgb(168, 96, 235);
     
+    width: 100%; 
+    padding: 20px 0; 
 }
 #titulo2{
     color: blueviolet;
@@ -35,15 +41,16 @@
     margin: 20px auto;
 }
 #container-bolas {
-    text-align: center; 
     margin: 50px 0;
+    
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
 }
 
 .item-bola {
-    display: inline-block;
-    margin: 0 20px;       
-    vertical-align: top;   
     width: 150px;          
+    text-align: center; 
 }
 
 .bola {
@@ -59,11 +66,12 @@
     font-weight: bold;
     text-align: center;    
 }
-#rodape{
+#rodape {
     height: 200px;
     background-color: rgb(146, 30, 86);
-    text-align: center;
     color: white;
-    padding-top: 100px;
     font-size: 150%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
 }
