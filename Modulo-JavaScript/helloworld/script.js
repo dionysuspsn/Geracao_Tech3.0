@@ -1,9 +1,14 @@
-for(i = 1; i < 32; i++){
-    dia.innerHTML += `<option>${i}</option>`;
-}
-for(i = 1; i < 13; i++){
-    mes.innerHTML += `<option>${i}</option>`;
-}
-for(i = 1900; i < 2027 ; i++){
-    ano.innerHTML += `<option>${i}</option>`;
+cep.onkeyup = () => {
+    if(cep.value.length == 8){
+       fetch(`https://viacep.com.br/ws/${cep.value}/json/`)
+       .then(resposta => resposta.json())
+       .then(resposta2 => {
+            console.log(resposta2)
+            rua.value = resposta2.logradouro;
+            bairro.value = resposta2.bairro;
+            cidade.value = resposta2.localidade;
+            estado.value = resposta2.estado;
+       })
+    }
+
 }
