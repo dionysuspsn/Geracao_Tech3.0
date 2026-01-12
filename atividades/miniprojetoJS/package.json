@@ -1,0 +1,24 @@
+{
+  "name": "geracao_tech3.0",
+  "version": "1.0.0",
+  "description": "Um repositório que guarda tudo que fiz e aprendi do curso Geração Tech 3.0",
+  "main": "index.js",
+  "scripts": {
+    "api": "npx json-server api.json --watch --port 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dionysuspsn/Geracao_Tech3.0.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/dionysuspsn/Geracao_Tech3.0/issues"
+  },
+  "homepage": "https://github.com/dionysuspsn/Geracao_Tech3.0#readme",
+  "dependencies": {
+    "json-server": "^0.17.4"
+  }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miniprojeto JS</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Doto:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <input type="text" id="busca" onkeyup="pesquisarTarefa()" placeholder="Pesquisar por título">
+    </header>
+    <main>
+        <section id="tarefas">
+            <h3>Tarefas <button onclick="abrirModal()">Nova Tarefa</button></h3>
+            <!-- <h5>Nenhuma tarefa registrada</h5>  -->
+            <ul id="lista">
+            </ul>
+        </section>
+        <section id="overlay" onclick="fecharModal()"></section>
+        <div class="modal" id="criarTarefa">
+            <form onsubmit="novaTarefa()">
+                <h2>Criar Tarefa <box-icon name='x' onclick="fecharModal()"></box-icon></h2>
+                <label for="titulo">Título</label>
+                <input type="text" id="titulo" required>
+                <label for="descricao">Descrição</label>
+                <textarea id="descricao" required></textarea>
+                <button>Criar</button>
+            </form>
+        </div>
+    </main>
+     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
