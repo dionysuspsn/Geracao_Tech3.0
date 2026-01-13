@@ -1,3 +1,5 @@
+let tarefas = [];
+
 function abrirModal(){
     overlay.classList.add("active");
     criarTarefa.classList.add("active");
@@ -10,10 +12,12 @@ function buscarTarefas(){
     fetch("http://localhost:3000/tarefas")
     .then(res => res.json())
     .then(res => {
+            tarefas = res
             inserirTarefas(res);
     })
 } buscarTarefas();
 function inserirTarefas(listaDeTarefas){
+    lista.innerHTML = "";
     if (listaDeTarefas.length > 0){
         listaDeTarefas.map(tarefa => {
             lista.innerHTML += `
@@ -26,6 +30,8 @@ function inserirTarefas(listaDeTarefas){
                 </li>
             `;
         })
+    } else{
+        lista.innerHTML = ("<h5>Nenhuma tarefa registrada</h5>")
     }
 }
 function novaTarefa(){
@@ -59,7 +65,10 @@ function deletarTarefa(id){
 }
 function pesquisarTarefa(){
     console.log(busca.value)
-    if(busca.value.length > 0){
-        
+    let resultado = tarefas.filter(tarefa => tarefa.titulo.toLowerCase().includes(busca.value.toLowerCase()));
+    if (busca.value.length > 0){
+        inserirTarefas(resultado)
+    } else{
+        inserirTarefas(tarefas)
     }
 }
