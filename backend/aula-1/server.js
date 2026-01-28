@@ -1,15 +1,18 @@
 const http = require('http');
-const url = require('url');
 
 const server = http.createServer((req, res) => {
-  const parsedUrl = url.parse(req.url, true);
+  const { url, method } = req;
 
-  console.log(`Método recebido: ${req.method}`);
-  console.log(`URL acessada: ${req.url}`);
-
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Servidor Node.js processou sua requisição!');
+  if (url === '/' && method === 'GET') {
+    res.statusCode = 200;
+    res.end('Página Inicial');
+  } else if (url === '/produtos') {
+    res.statusCode = 200;
+    res.end('Lista de Produtos');
+  } else {
+    res.statusCode = 404;
+    res.end('Página não encontrada');
+  }
 });
 
-server.listen(3000, () => console.log('Servidor online na porta 3000'));
+server.listen(3000, () => console.log('Rodando com Nodemon!'));
